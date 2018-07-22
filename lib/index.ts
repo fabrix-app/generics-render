@@ -1,0 +1,1 @@
+export { RenderGeneric } from './RenderGeneric'
