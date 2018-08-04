@@ -1,15 +1,15 @@
 import * as MarkdownIt from 'markdown-it'
 import * as meta from 'markdown-it-meta'
 import { each, defaults } from 'lodash'
+import { Generic } from '@fabrix/spool-generics'
 
-export class RenderGeneric {
-  public config: {
-  }
-  public plugins: {}
 
-  constructor(config, plugins) {
-    this.config = config
-    this.plugins = plugins
+export class RenderGeneric extends Generic {
+  public plugins: {[key: string]: any}
+
+  constructor(app, config) {
+    super(app, config)
+    this.plugins = config.plugins || {}
   }
 
   /**
@@ -56,6 +56,10 @@ export class RenderGeneric {
     }
     return Promise.resolve(res)
   }
+
+  /**
+   * Synchronous version of RenderGeneric.render
+   */
   renderSync(document, options) {
     const md = this._init(options)
     const renderedDocument =  md.render(document)
