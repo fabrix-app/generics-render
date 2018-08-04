@@ -5,11 +5,11 @@ import { Generic } from '@fabrix/spool-generics'
 
 
 export class RenderGeneric extends Generic {
-  public plugins: {[key: string]: any}
+  public plugins: {[key: string]: any}[]
 
   constructor(app, config) {
     super(app, config)
-    this.plugins = config.plugins || {}
+    this.plugins = config.plugins || []
   }
 
   /**
