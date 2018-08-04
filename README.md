@@ -28,15 +28,15 @@ export const generics = {
     adapter: require('@fabrix/generic-render').RenderGeneric,
     config: {
        // Must always be set to true
-       html: true
-    },
-    plugins: [
-     // Example Plugin (markdown-it-meta is required and already installed)
-     // {
-     //   plugin: require('markdown-it-meta'),
-     //   options: {}
-     // }
-    ]
+       html: true,
+       plugins: [
+        // Example Plugin (markdown-it-meta is required and already installed)
+        // {
+        //   plugin: require('markdown-it-meta'),
+        //   options: {}
+        // }
+       ]
+    }
   }
 }
 ```
